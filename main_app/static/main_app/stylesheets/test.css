@@ -1,0 +1,128 @@
+#backgroundDiv {
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 600px;
+}
+
+.question-image {
+    width: 350px;
+    position: absolute;
+}
+
+.question-text {
+    position: absolute;
+    width: 360px;
+    margin-left: 400px;
+}
+
+#questions {
+    padding-top: 20px;
+}
+
+#intro {
+
+}
+
+#question1 {
+    display: none;
+}
+
+#question2 {
+    display: none;
+}
+
+#question3 {
+    display: none;
+}
+
+#question4 {
+    display: none;
+}
+
+#question5 {
+    display: none;
+}
+
+#question6 {
+    display: none;
+}
+
+#question7 {
+    display: none;
+}
+
+#question8 {
+    display: none;
+}
+
+#question9 {
+    display: none;
+}
+
+#question10 {
+    display: none;
+}
+
+#question11 {
+    display: none;
+}
+
+#question12 {
+    display: none;
+}
+
+#question13 {
+    display: none;
+}
+
+
+.qBtn, .qBtnFirst {
+    float: right;
+    width: 100px;
+}
+
+#q1Btn {
+    bottom: 5px;
+}
+
+.quote {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Times;
+}
+
+input[type="radio"] {
+    padding-bottom: 30px;
+    width:19px;
+    height:19px;
+    margin:-2px 20px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    background-color: yellow;
+    border: 2px solid black;
+}
+
+label{
+    cursor: pointer;
+    color: #072a70;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+label:hover {
+    color: green;
+}
+
+#nextBtn {
+    width: 100px;
+    float: right;
+}
+
+.body-section {
+/*    display: none;*/
+}
+
+#allAnswers {
+/*    display: none;*/
+}

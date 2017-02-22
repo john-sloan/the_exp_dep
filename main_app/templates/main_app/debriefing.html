@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssANDjs %}
+    <link rel="stylesheet" href="/static/main_app/stylesheets/debriefing.css?{% now "U" %}">
+{% endblock %}
+{% block content %}
+{% include 'progression.html' %}
+<style>
+    #ballOne, #ballTwo, #ballThree, #ballFour {
+        background-color: green;
+    }
+    #lineOneTwo, #lineTwoThree, #lineThreeFour, #lineFourFive{
+        background-color: green;
+    }
+    #ballFive{
+        background-color: #86ff80;
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        font-weight: bold;
+        border: 2px solid green;
+        padding-top: 3px;
+        margin-top: -10px;
+        margin-left: 710px;
+    }
+</style>
+<div class="top-buffer">Finish</div>
+<p>Thank you for your participation!</p>
+<p>If you have any questions about this, or future experiments, please contact us at:</p> 
+<p style="width: 200px;margin-left:auto;margin-right:auto;"><strong><u style="width: 200px;margin-left:auto;margin-right:auto;">john.sloan.1@ucdconnect.ie</u><strong></p>
+<a href="{% url 'main_app:welcome' %}"><button class="btn btn-success" style="float:right;">Homepage</button></a>
+{% endblock %}

@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssANDjs %}
+    <link rel="stylesheet" href="/static/main_app/stylesheets/test.css?{% now "U" %}">
+    <script src="/static/main_app/javascript/test.js?{% now "U" %}"></script>
+{% endblock %}
+{% block content %}
+    {% if not a_d %}
+        {% include 'progression.html' %}
+        <style>
+            #ballOne {
+                background-color: green;
+            }
+            #lineOneTwo {
+                background-color: green;
+            }
+            #ballTwo {
+                background-color: #86ff80;
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+                font-weight: bold;
+                border: 2px solid green;
+                padding-top: 3px;
+                margin-top: -10px;
+                margin-left: 170px;
+            }
+        </style>
+            <div class="top-buffer">Questions</div>
+            <div id="questions">
+                <div id="intro">
+                    <p>Please answer the following 10 questions on facial expressions.</p>
+                    <button type="button" id="startBtn" class="btn btn-primary qBtnFirst">next</button>
+                </div>
+                <div class="question" id="question1">
+                    <img class="question-image" src="{% static 'main_app/mery_imgs/happygirl.jpeg' %}" id="happy_girl">
+                    <div class="question-text">
+                        <div class="main_question">
+                            <p><strong>(1)</strong> This girl's <strong>expression</strong> is very ...?</p>
+                        </div>
+                        <form method="get" id="form1">
+                            <input type="radio" name="ans" id="s11" value="1">
+                            <label for="s11">angry</label><br>
+                            <input type="radio" name="ans" id="s12" value="2">
+                            <label for="s12">happy</label><br>
+                            <input type="radio" name="ans" id="s13" value="3">
+                            <label for="s13">sad</label><br>
+                            <input type="radio" name="ans" id="s14" value="4">
+                            <label for="s14">tired</label><br>
+                            <button id="q1Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="question" id="question2">
+                    <img class="question-image" src="{% static 'main_app/mery_imgs/angry_man.jpeg' %}" id="happy_girl">
+                    <div class="question-text">
+                        <div class="main_question">
+                            <p><strong>(2)</strong> This man is ...?</p>
+                        </div>
+                        <form method="get" id="form2">
+                            <input type="hidden" name="question_number" value="2">
+                            <input type="radio" name="ans" id="s21" value="1" required>
+                            <label for="s21">thoughtful</label><br>
+                            <input type="radio" name="ans" id="s22" value="2">
+                            <label for="s22">sad</label><br>
+                            <input type="radio" name="ans" id="s23" value="3">
+                            <label for="s23">confused</label><br>
+                            <input type="radio" name="ans" id="s24" value="4">
+                            <label for="s24">angry</label><br>
+                            <button id="q2Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="question" id="question3">
+                    <img class="question-image" src="{% static 'main_app/mery_imgs/afraid_woman.jpeg' %}" id="happy_girl">
+                    <div class="question-text">
+                        <div class="main_question">
+                            <p><strong>(3)</strong> This woman seems to be ...?</p>
+                        </div>
+                        <form method="get" id="form3">
+                            <input type="hidden" name="question_number" value="3">
+                            <input type="radio" name="ans" id="s31" value="1" required>
+                            <label for="s31">afraid</label><br>
+                            <input type="radio" name="ans" id="s32" value="2">
+                            <label for="s32">joyful</label><br>
+                            <input type="radio" name="ans" id="s33" value="3">
+                            <label for="s33">excited</label><br>
+                            <input type="radio" name="ans" id="s34" value="4">
+                            <label for="s34">disgusted</label><br>
+                            <button id="q3Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="question" id="question4">
+                    <img class="question-image" src="{% static 'main_app/mery_imgs/stressed_man.jpeg' %}" id="happy_girl">
+                    <div class="question-text">
+                        <div class="main_question">
+                            <p><strong>(4)</strong> This mans appears to be very ...?</p>
+                        </div>
+                        <form method="get" id="form4">
+                            <input type="hidden" name="question_number" value="4">
+                            <input type="radio" name="ans" id="s41" value="1" required>
+                            <label for="s41">calm</label><br>
+                            <input type="radio" name="ans" id="s42" value="2">
+                            <label for="s42">stressed</label><br>
+                            <input type="radio" name="ans" id="s43" value="3">
+                            <label for="s43">sad</label><br>
+                            <input type="radio" name="ans" id="s44" value="4">
+                            <label for="s44">relaxed</label><br>
+                            <button id="q4Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="question" id="question5">
+                    <img class="question-image" src="{% static 'main_app/mery_imgs/thoughtful_woman.jpeg' %}" id="happy_girl">
+                    <div class="question-text">
+                        <div class="main_question">
+                            <p><strong>(5)</strong> This womans's expression is ...?</p>
+                        </div>
+                        <form method="get" id="form5">
+                            <input type="hidden" name="question_number" value="5">
+                            <input type="radio" name="ans" id="s51" value="1" required>
+                            <label for="s51">thoughtful</label><br>
+                            <input type="radio" name="ans" id="s52" value="2">
+                            <label for="s52">cheerful</label><br>
+                            <input type="radio" name="ans" id="s53" value="3">
+                            <label for="s53">joyful</label><br>
+                            <input type="radio" name="ans" id="s54" value="4">
+                            <label for="s54">fearful</label><br>
+                            <button id="q5Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="question" id="question6">
+                    <img class="question-image" src="{% static 'main_app/mery_imgs/worried_man.jpeg' %}" id="happy_girl">
+                    <div class="question-text">
+                        <div class="main_question">
+                            <p><strong>(6)</strong> This man appears to be ...?</p>
+                        </div>
+                        <form method="get" id="form6">
+                            <input type="hidden" name="question_number" value="6">
+                            <input type="radio" name="ans" id="s61" value="1" required>
+                            <label for="s61">excited</label><br>
+                            <input type="radio" name="ans" id="s62" value="2">
+                            <label for="s62">tired</label><br>
+                            <input type="radio" name="ans" id="s63" value="3">
+                            <label for="s63">sad</label><br>
+                            <input type="radio" name="ans" id="s64" value="4">
+                            <label for="s64">worried</label><br>
+                            <button id="q6Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="question" id="question7">
+                    <img class="question-image" src="{% static 'main_app/mery_imgs/confused_face.jpeg' %}" id="happy_girl">
+                    <div class="question-text">
+                        <div class="main_question">
+                            <p><strong>(7)</strong> This man seems to be ...?</p>
+                        </div>
+                        <form method="get" id="form7">
+                            <input type="hidden" name="question_number" value="7">
+                            <input type="radio" name="ans" id="s71" value="1" required>
+                            <label for="s71">fearful</label><br>
+                            <input type="radio" name="ans" id="s72" value="2">
+                            <label for="s72">happy</label><br>
+                            <input type="radio" name="ans" id="s73" value="3">
+                            <label for="s73">confused</label><br>
+                            <input type="radio" name="ans" id="s74" value="4">
+                            <label for="s74">angry</label><br>
+                            <button id="q7Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="question" id="question8">
+                    <img class="question-image" src="{% static 'main_app/mery_imgs/happy_sad_girl.png' %}" id="happy_sad_girl">
+                    <div class="question-text">
+                    <div id="happy_sad_question">
+                        <br>
+                        <p>This girl was happy but now she is sad.</p><br>
+                        <div class="main_question">
+                            <p><strong>(8)</strong> Finish the following sentence:</p>
+                            <p><i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The girl's expression has ___________</i></p>
+                        </div>
+                        <form method="get" id="form8">
+                            <input type="hidden" name="question_number" value="8">
+                            <input type="radio" name="ans" id="s81" value="1" required>
+                            <label for="s81">changed</label><br>
+                            <input type="radio" name="ans" id="s82" value="2">
+                            <label for="s82">stayed the same</label><br>
+                            <button id="q8Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                <div class="question" id="question9">
+                    <div class="main_question">
+                        <p><strong>(9)</strong> How many <strong>sentences</strong> are in the following story?</p>
+                    </div>
+                    <p class="quote"><i>Last Thursday, a group of stormtroopers were seen in London. They marked the release of the new “Star Wars” film called “Rogue One”. They were on their way to a private screening of the new film. On their way, they visited many famous sights, including the Millennium Bridge.</i></p>
+                    <form method="get" id="form9">
+                        <input type="hidden" name="question_number" value="9">
+                        <input type="radio" name="ans" id="s91" value="1" required>
+                        <label for="s91">one</label><br>
+                        <input type="radio" name="ans" id="s92" value="2">
+                        <label for="s92">two</label><br>
+                        <input type="radio" name="ans" id="s93" value="3">
+                        <label for="s93">three</label><br>
+                        <input type="radio" name="ans" id="s94" value="4">
+                        <label for="s94">four</label><br>
+                        <button id="q9Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                    </form>
+                </div>
+                <div class="question" id="question10">
+                    <div class="main_question">
+                        <p><strong>(10)</strong> Are there <strong>mistakes</strong> in the following sentence?</p>
+                    </div>
+                    <p class="quote"><i>Jack grabbed the microphone and runned away next the stage</i></p>
+                    <form method="get" id="form10">
+                        <input type="hidden" name="question_number" value="10">
+                        <input type="radio" name="ans" id="s101" value="1" required>
+                        <label for="s101">yes</label><br>
+                        <input type="radio" name="ans" id="s102" value="2">
+                        <label for="s102">no</label><br>
+                        <input type="radio" name="ans" id="s103" value="3">
+                        <label for="s103">I don't know</label><br>
+                        <button id="q10Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                    </form>
+                </div>
+                <div class="question" id="question11">
+                    <div class="main_question">
+                        <p><strong>(11)</strong> The <strong>vocabulary</strong> in the following sentence is unusual. Which word is strange?</p>
+                    </div>
+                    <p class="quote"><i>Michael buttered a piece of bread with magnets</i></p>
+                    <form method="get" id="form11">
+                        <input type="hidden" name="question_number" value="11">
+                        <input type="radio" name="ans" id="s111" value="1" required>
+                        <label for="s111">buttered</label><br>
+                        <input type="radio" name="ans" id="s112" value="2">
+                        <label for="s112">piece</label><br>
+                        <input type="radio" name="ans" id="s113" value="3">
+                        <label for="s113">bread</label><br>
+                        <input type="radio" name="ans" id="s114" value="4">
+                        <label for="s114">magnets</label><br>
+                        <input type="radio" name="ans" id="s115" value="5">
+                        <label for="s115">I don't know</label><br>
+                        <button id="q11Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                    </form>
+                </div>
+                <div class="question" id="question12">
+                    <div class="main_question">
+                        <p><strong>(12)</strong> Is the <strong>grammar</strong> in the following sentence correct?</p>
+                    </div>
+                    <p class="quote"><i>Jim shifted uncomfortably in his seat while those in attendance who had not yet had the misfortune to become acquainted with this blubbering fool waited in anticipation.</i></p>
+                    <form method="get" id="form12">
+                        <input type="hidden" name="question_number" value="12">
+                        <input type="radio" name="ans" id="s121" value="1" required>
+                        <label for="s121">yes</label><br>
+                        <input type="radio" name="ans" id="s122" value="2">
+                        <label for="s122">no</label><br>
+                        <input type="radio" name="ans" id="s123" value="3">
+                        <label for="s123">I don't know</label><br>
+                        <button id="q12Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                    </form>
+                </div>
+                <div class="question" id="question13">
+                    <p>The questions are finished. In the next section you will practise writing sentences to Mery.</p>
+                    <button type="button" id="goNextBtn" class="btn btn-success qBtn">next</button>
+                </div>
+            </div>
+        </div>
+        <div id="allAnswers"></div>
+    {% else %}
+        <p>you have already completed this section</p>
+        <a href="{% url 'main_app:welcome' %}"><button class="btn btn-success" style="float:right;">Homepage</button></a>
+    {% endif %}
+{% endblock %}

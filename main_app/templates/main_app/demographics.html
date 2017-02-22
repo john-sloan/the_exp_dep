@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssANDjs %}
+    <link rel="stylesheet" href="/static/main_app/stylesheets/demographics.css?{% now "U" %}">
+    <script src="/static/main_app/javascript/demographics.js?{% now "U" %}"></script>
+{% endblock %}
+{% block content %}
+    {% if not a_d %}
+        {% include 'progression.html' %}
+        <style>
+            #ballOne {
+                background-color: #86ff80;
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+                font-weight: bold;
+                border: 2px solid green;
+                padding-top: 3px;
+                margin-top: -10px;
+                margin-left: -10px;
+            }
+        </style>
+            <div class="top-buffer">1. About You</div>
+            <form method="post">{% csrf_token %}
+                <p>Please provide the following information about yourself:</p><br>
+                <div class="p_form">
+                    {{ a_p_form.as_p }}
+
+                </div>
+                <div class="n_n_p_form">
+                    {{ n_n_p_form.as_p }}
+                </div>
+                <input type="submit" id="submitDemBtn" name="submit button" class="btn btn-success" value="submit" disabled>
+            </form>
+    {% else %}
+        <p>you have already completed this section</p>
+        <a href="{% url 'main_app:welcome' %}"><button class="btn btn-success" style="float:right;">Homepage</button></a>
+    {% endif %}
+{% endblock %}

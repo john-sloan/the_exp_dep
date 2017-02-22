@@ -1,0 +1,19 @@
+p {
+    margin-bottom: 0px;
+}
+
+select {
+    background-color: beige;
+    margin-bottom: 20px;
+}
+
+.n_n_p_form {
+    display: none;
+}
+
+#submitDemBtn {
+    float: right;
+    width: 100px;
+}
+
+

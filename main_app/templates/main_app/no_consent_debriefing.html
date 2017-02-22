@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssANDjs %}
+    <link rel="stylesheet" href="/static/main_app/stylesheets/no_consent_debriefing.css?{% now "U" %}">
+    <script src="/static/main_app/javascript/no_consent_debriefing.js?{% now "U" %}"></script>
+{% endblock %}
+{% block content %}
+    <p>Thank you for your comments. You will be redirected to the homepage in <span class="seconds">10</span> seconds.</p>
+{% endblock %}

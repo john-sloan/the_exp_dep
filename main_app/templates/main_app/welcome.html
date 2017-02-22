@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssANDjs %}
+    <link rel="stylesheet" href="/static/main_app/stylesheets/welcome.css?{% now "U" %}">
+    <script src="/static/main_app/javascript/welcome.js?{% now "U" %}' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="mery-welcome-images">
+        <div class="mery-welcome-images-inside">
+            <div class="mery-still mery-image" id="Still1"></div>
+            <div class="mery-still mery-image" id="Still2"></div>
+            <div class="mery-still mery-image" id="Still3"></div>
+        </div>
+    </div>
+    <div class="welcome-text">
+        <p>Welcome to our experiment on facial expressions and language!</p>
+        <p>We aim to improve language education through understanding how language learners and native speakers read facial expressions.</p>
+        <div class="welcome-buttons">
+            <button type="button" class='btn btn-default'>watch the <span id="TED">TED</span> talk</button>
+            {% if not a_d %}
+                <button id="goToExp" type="button" class='btn btn-success'>go to the <span id="experiment">experiment</button>
+            {% endif %}
+        </div>
+   </div>
+{% endblock %}

@@ -1,0 +1,87 @@
+.mery-sprite {
+    background-image: url(/static/main_app/mery_imgs/mery_insa/mery_insa_sprite.jpg);
+    background-repeat: no-repeat;
+    height: 320px;
+    width: 400px;
+    background-position: 0px 0px;
+    display: inline-block;
+}
+
+.insa-text {
+    width: 425px;
+    display: inline-block;
+    padding: 15px;
+    position: absolute;
+    margin-top: 155px;
+}
+
+p {
+    font-size: 20px;
+    color: #072a70;
+    margin: 3px;
+}
+
+.btn {
+    width: 100px;
+    font-size: 18px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    float: right;
+}
+
+.textbox {
+    width: 400px;
+    margin-left: 410px;
+    margin-top: -100px;
+    display: none;
+}
+
+#myTextBox {
+    width: 400px;
+    font-size: 16px;
+    font-family: Times;
+}
+
+#clickSendInstruction {
+    position: absolute;
+    width: 400px;
+    margin-top: -195px;
+    margin-left: 8px;
+}
+
+.sentenceBox {
+    width: 380px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 16px;
+    font-family: Times;
+    margin-left: 423px;
+    margin-top: -230px;
+    display: none;
+}
+
+#backgroundDiv {
+    height: 420px;
+}
+
+.explanationText {
+    width: 400px;
+    margin-left: 415px;
+    margin-top: 60px;
+    display: none;
+}
+
+#goToNextPage {
+    width: 120px;
+    float: none;
+    margin-left: 270px;
+}
+
+#sendTextButton {
+    display: none;
+}
+
+
+
+

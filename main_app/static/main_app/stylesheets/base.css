@@ -1,0 +1,67 @@
+#ucd-logo {
+    height: 60px;
+    float: right;
+    margin-top: -55px;
+    margin-right: 25px;
+}
+
+#adapt-logo {
+    height: 60px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+#title {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    margin-top: -60px;
+    text-align: center;
+    color: #072a70;
+}
+
+.navbar {
+    width: 700px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#backgroundDiv {
+    width: 850px;
+    background-color: #b3cafc;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    margin-top: -20px;
+    display: none;
+}
+
+p {
+    font-size: 18px;
+    color: #072a70;
+}
+
+.whole-background {
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 1500px;
+    z-index: 1;
+}
+
+
+.top-buffer {
+    color: #072a70;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}

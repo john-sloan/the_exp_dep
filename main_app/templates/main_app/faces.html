@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssANDjs %}
+    <link rel="stylesheet" href="/static/main_app/stylesheets/faces.css?{% now "U" %}">
+    <script src="/static/main_app/javascript/faces.js?{% now "U" %}"></script>
+{% endblock %}
+{% block content %}
+    {% if not a_d %}
+        {% include 'progression.html' %}
+        <style>
+            #ballOne, #ballTwo, #ballThree {
+                background-color: green;
+            }
+            #lineOneTwo, #lineTwoThree, #lineThreeFour{
+                background-color: green;
+            }
+            #ballFour {
+                background-color: #86ff80;
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+                font-weight: bold;
+                border: 2px solid green;
+                padding-top: 3px;
+                margin-top: -10px;
+                margin-left: 530px;
+            }
+        </style>
+        <div class="body-section">
+            <div class="top-buffer">Write with Mery</div>
+            <div class="mery-background"><div class="mery-sprite mery-sprite-1"></div></div>
+            <div class="intro-text">
+                <p>In this section you will send <strong>6</strong> sentences to Mery.</p>
+                <p>Write the sentences and watch Mery's face carefully.</p>
+                <p>You must write and send the sentences <strong>one-by-one</strong>.</p>
+                <button type="button" class="btn btn-primary" id="showQuestionButton">next</button>
+            </div>
+            <div class="questionbox">
+                <p><strong>Tell Mery about your favorite holiday.</strong><br> <span class="sents-no">(6 sentences)</span></p>
+            </div>
+            <div class="textbox">
+                <input type="hidden", name="sent_no", value="0">
+                <p class="instructions">Write sentence <span class="instruction-no">1</span> in the box below.</p><br>
+                <textarea id="myTextBox" rows="4" cols="50" maxlength="210" name="user_sentence" autofocus></textarea>
+                <button type="button" class="btn btn-primary sendTextButton">send</button>
+            </div>
+            <div class=sentenceBoxPosition>
+                <div class="sentenceBox"></div>
+            </div>
+        </div>
+        <div id="sentence_no">{{sentence}}</div>
+        <div class="pop-up">
+            <div class="pop-up-background">
+            </div>
+            <div class="pop-up-box">
+                <div class="pop-up-box-2">
+                    <form method="get" class="qForm" id="s3QForm">
+                        <div id="s3q1">
+                            <input type="hidden" name="s3questions">
+                            <input type="hidden" name="sentence_no" value="3">
+                            <p><strong>How would you describe Mery's expression after reading that sentence?</strong></p><br>
+                            <input type="radio" name="ans31" id="s311" value="1" required>
+                            <label for="s311">happy</label><br>
+                            <input type="radio" name="ans31" id="s312" value="2">
+                            <label for="s312">angry</label><br>
+                            <input type="radio" name="ans31" id="s313" value="3">
+                            <label for="s313">confused</label><br>
+                            <input type="radio" name="ans31" id="s314" value="4">
+                            <label for="s314">thoughtful</label><br>
+                            <input type="radio" name="ans31" id="s315" value="5">
+                            <label for="s315">I don't know</label><br>
+                            <button id="s31Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </div>
+                        <div id="s3q2">
+                            <p>Your sentence was:<span id="quote"></span></p>
+                            <div class="move-question-down">
+                                <p><strong>Why do you think Mery's expression changed?</strong></p><br>
+                                <input type="radio" name="ans32" id="s321" value="1">
+                                <label for="s321">Mery thought it wasn't interesting</label><br>
+                                <input type="radio" name="ans32" id="s322" value="2">
+                                <label for="s322">There were mistakes in the vocabulary or grammar</label><br>
+                                <input type="radio" name="ans32" id="s323" value="3" required>
+                                <label for="s323">The sentence was too long</label><br>
+                                <input type="radio" name="ans32" id="s324" value="4">
+                                <label for="s324">The sentence was too short</label><br>
+                                <input type="radio" name="ans32" id="s325" value="5">
+                                <label for="s325">I don't know</label><br>
+                                <button id="s32Btn" type="input" class="btn btn-primary qBtn">submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="pop-up-box-4">
+                    <form method="get" class="qForm" id="s5QForm">
+                        <div id="s5q">
+                            <input type="hidden" name="s5questions">
+                            <input type="hidden" name="sentence_no" value="5">
+                            <p><strong>Did Mery's expression change?</strong></p><br>
+                            <input type="radio" name="ans51" id="s511" value="1" required>
+                            <label for="s511">yes</label><br>
+                            <input type="radio" name="ans51" id="s512" value="2">
+                            <label for="s512">no</label><br>
+                            <input type="radio" name="ans51" id="s513" value="3">
+                            <label for="s513">I don't know</label><br>
+                            <button id="s51Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="pop-up-box-5">
+                    <form method="get" class="qForm" id="s6QForm">
+                        <div id="s6q">
+                            <input type="hidden" name="s6questions">
+                            <input type="hidden" name="sentence_no" value="6">
+                            <p><strong>Did Mery's expression change?</strong></p><br>
+                            <input type="radio" name="ans61" id="s611" value="1" required>
+                            <label for="s611">yes</label><br>
+                            <input type="radio" name="ans61" id="s612" value="2">
+                            <label for="s612">no</label><br>
+                            <input type="radio" name="ans61" id="s613" value="3">
+                            <label for="s613">I don't know</label><br>
+                            <button id="s61Btn" type="button" class="btn btn-primary qBtn">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p>you have already completed this section</p>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssANDjs %}
+    <link rel="stylesheet" href="/static/main_app/stylesheets/faces_intro.css?{% now "U" %}">
+    <script src="/static/main_app/javascript/faces_intro.js?{% now "U" %}"></script>
+{% endblock %}
+{% block content %}
+    {% if not a_d %}
+        {% include 'progression.html' %}
+        <style>
+            #ballOne, #ballTwo {
+                background-color: green;
+            }
+            #lineOneTwo, #lineTwoThree{
+                background-color: green;
+            }
+            #ballThree {
+                background-color: #86ff80;
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+                font-weight: bold;
+                border: 2px solid green;
+                padding-top: 3px;
+                margin-top: -10px;
+                margin-left: 350px;
+            }
+        </style>
+        <div class="body-section">
+            <div class="top-buffer">Practice with Mery</div>
+        <!--     <div class="mery-img-2"><div> -->
+            <div class="mery-sprite"></div>
+                <div class="intro-text">
+                    <p>In this section you will send <Strong>2</strong> sentences to Mery.</p>
+                    <p>Because this is practice, we will give you the 2 sentences to send.</p>
+                    <p>You must write and send the sentences one-by-one.</p>
+                    <button type="button" class="btn btn-primary" id="showQuestionButton">next</button>
+                </div>
+                <div class="questionbox">
+                    <p><strong>Tell Mery about your best friend.</strong><br> <span class="sents-no">(2 sentences)</span></p>
+                </div>
+                <div class="textbox">
+                    <p class="sents-no">Please write this 1st sentence in the textbox below:</p><br>
+                    <p class="quote"><i>My best friend is probably the boy who moved in next door to me when I was about 6 years old.</i></p>
+                    <textarea id="myTextBox" rows="4" cols="50">My best friend is probably the boy who moved in next </textarea>
+                    <button type="button" class="btn btn-primary" id="sendTextButton1">send</button>
+                </div>
+                <div class="sentenceBox"></div>
+                <div class="explanationText">
+                    <p>Excellent! You can see Mery's expression <strong>changed</strong>.<p>
+                    <p>Let's send the second sentence.</p>
+                    <button type="button" class="btn btn-primary" id="showSentence2Button">next</button>
+                </div>
+                <div class="textbox2">
+                    <p class="remove">Please write this 2nd sentence in the textbox below:</p><br>
+                    <p class="remove quote"><i>He is tall and kind.</i></p>
+                    <textarea id="myTextBox2" rows="4" cols="50" autofocus></textarea>
+                    <button type="button" class="btn btn-primary" id="sendTextButton2">send</button>
+                </div>
+                <div class="explanationText2">
+                    <p>This time, Mery's expression <strong>stayed the same</strong>.<p>
+                    <p>Ok, lets begin the real experiment.</p>
+                    <button type="button" id="toFacesBtn" class="btn btn-primary">start</button>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p>you have already completed this section</p>
+        <a href="{% url 'main_app:welcome' %}"><button class="btn btn-success" style="float:right;">Homepage</button></a>
+    {% endif %}
+{% endblock %}

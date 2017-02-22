@@ -1,0 +1,196 @@
+.mery-background {
+    position: absolute;
+    height: 320px;
+    width: 400px;
+    background-image: url(/static/main_app/mery_imgs/mery_faces/mery_static_0.jpg);
+    display: inline-block;
+}
+
+.shift-cuz-background {
+    margin-left: 400px;
+}
+
+.mery-sprite {
+    background-repeat: no-repeat;
+    height: 320px;
+    width: 400px;
+    background-position: 0px 0px;
+    display: inline-block;
+}
+
+.mery-sprite-1 {
+    background-image: url(/static/main_app/mery_imgs/mery_faces/mery_faces_00.jpg);
+}
+
+#backgroundDiv {
+    height: 520px;
+}
+
+.body-section {
+/*    display: none;*/
+}
+
+.intro-text {
+    width: 425px;
+    display: inline-block;
+    padding: 15px;
+    position: absolute;
+    margin-top: 132px;
+    margin-left: 400px;
+}
+
+p {
+    font-size: 20px;
+    color: #072a70;
+    margin: 3px;
+}
+
+.instructions {
+    position: absolute;
+    font-size: 16px;
+    margin-top:20px;
+}
+.instruction-no {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn {
+    width: 100px;
+    font-size: 18px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    float: right;
+}
+
+.questionbox {
+    position: absolute;
+    margin-left: 410px;
+    margin-top: 0px;
+    display: none;
+}
+
+.questionbox-1 {
+    position: absolute;
+    margin-left: 410px;
+    margin-top: -325px;
+}
+
+.textbox {
+    position: absolute;
+    width: 400px;
+    margin-left: 410px;
+    margin-top: 175px;
+    display: none;
+}
+
+#myTextBox, #myTextBox2 {
+    width: 400px;
+    font-size: 16px;
+    margin-top: 30px;
+    font-family: Times;
+}
+
+.sentenceBox {
+    width: 400px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px 8px;
+    font-size: 16px;
+    font-family: Times;
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+
+.sentenceBoxPosition {
+    margin-left: 410px;
+    margin-top: 20px;
+    width: 380px;
+    height: 160px;
+    position: absolute;
+}
+
+.sents-no {
+    font-size: 16px;
+}
+
+#sentence_no {
+    display: none;
+}
+
+.pop-up {
+    display: none;
+}
+
+.pop-up-background {
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 101;
+}
+
+.pop-up-box {
+    position: fixed;
+    width: 810px;
+    height: 360px;
+    background-color: #f3ffaa;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 0px;
+    z-index: 102;
+}
+
+.pop-up-box-2 {
+    z-index: 103;
+    display: none;
+}
+
+.pop-up-box-4 {
+    display: none;
+    z-index: 103;
+}
+
+.pop-up-box-5 {
+    display: none;
+    z-index: 103;
+}
+
+#s3q1 {
+    display: none;
+}
+
+#s3q2 {
+    display: none;
+}
+
+.qBtn {
+    bottom: 20px;
+    right: 20px;
+}
+
+.qForm {
+    height: 300px;
+}
+
+#quote {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+    font-family: serif;
+    font-style: italic;
+}
+
+.move-question-down {
+    margin-top: 20px;
+}
+
+

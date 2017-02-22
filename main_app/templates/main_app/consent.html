@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssANDjs %}
+    <link rel="stylesheet" href="/static/main_app/stylesheets/consent.css?{% now "U" %}">
+    <script src="/static/main_app/javascript/consent.js?{% now "U" %}"></script>
+{% endblock %}
+{% block content %}
+    {% if not a_d %}
+        <p>In this experiment, you will answer questions, type sentences and watch Mery's facial expressions.</p>
+        <p>It should take 10 minutes to complete the following 5 sections:</p>
+        {% include 'experiment_map.html' %}
+        <p>Before beginning, please carefully read the Information Sheet and check all the boxes on the Consent Form.</p>
+        <p class="supplementaryPTag">(If you do not wish to consent or do not want to provide the information requested below, please click 'I do not agree')</p>
+        <div class="information-sheet">
+            <p class="information-sheet-title">Information Sheet </p>
+            <p class="information-sheet-b"><span style="font-weight: bold;">Title:</span>&nbsp;&nbsp;&nbsp; An investigation into the response of native and non-native speakers to change in facial expression of a 3D avatar to their typed sentences. </p>
+            <p class="information-sheet-b"><span style="font-weight: bold;">Topic:</span>&nbsp;&nbsp;&nbsp; Second Language Acquisition, Computational Linguistics, Multimodal Communication</p>
+            <p class="information-sheet-b"><span style="font-weight: bold;">Institution:</span>&nbsp;&nbsp;&nbsp; UCD Computer Science</p>
+            <p class="information-sheet-b" style="margin-bottom: -20px;"><span style="font-weight: bold;">Researcher:</span>&nbsp;&nbsp;&nbsp; John Sloan </p>
+            <p>&nbsp;</p>
+            <p class="information-sheet-pb"> What is this research about? </p>
+            <p class="information-sheet-p">I am studying language learning and emotions. I want to understand the difference between how language learners and native speakers feel when they see different facial expressions in a 3D avatar.</p>
+
+            <p class="information-sheet-pb">Why are you doing this research? </p>
+            <p class="information-sheet-p"> I believe facial expressions are a very important means of non-verbal communication. I want to understand what language learners think when they see different expressions and use this to help people acquire languages.</p>
+
+            <p class="information-sheet-pb"> Why have I been invited to take part? </p>
+            <p class="information-sheet-p">This study is open to all native English speakers and non-native English learners of intermediate ability and up.</p>
+
+            <p class="information-sheet-pb">What will happen if I decide to take part in this research study? </p>
+            <p class="information-sheet-p"> You will take a 15-minute quiz which has 2 sections: first, you will answer some questionson emotion & language; and second, you will type 6 sentences while you can see the facial expressions of an avatar.</p>
+
+            <p class="information-sheet-pb"> How will the data be used? </p>
+            <p class="information-sheet-p">I will use your answers from the questions to understand your English ability and what you think of the avatar’s expressions. I will use the sentences you typed on computer to understand how you change your language production after seeing various expressions.
+
+            <p class="information-sheet-pb"> How will you protect my privacy? </p>
+            <p class="information-sheet-p"> This study is anonymous. You should not enter your real name or the names of others while taking part.</p>
+
+            <p class="information-sheet-pb">How is this research funded? </p>
+            <p class="information-sheet-p">This project is partly funded through the ADAPT centre. ADAPT reviews papers in advance of submission to conferences/journals in case there are any opportunities to protect/commercialise the research. </p>
+
+            <p class="information-sheet-pb">What are the benefits of taking part in this research study? </p>
+            <p class="information-sheet-p">You will be able to practice your English. You will interact with an avatar who responds to your sentences.</p>
+
+            <p class="information-sheet-pb">What are the risks of taking part in this research study? </p>
+            <p class="information-sheet-p">If you see negative expressions from the avatar you may feel bad. </p>
+
+            <p class="information-sheet-pb">Can I change my mind at any stage and withdraw from the study? </p>
+            <p class="information-sheet-p">Yes. You can change your mind anytime and withdraw with no disadvantage. </p>
+
+            <p class="information-sheet-pb">Has this research project received ethical approval? </p>
+            <p class="information-sheet-p">Yes. Approval from the UCD Human Research Ethics comittee was granted on 25/01/2017.</p>
+
+            <p class="information-sheet-pb">How will I find out what happens with this project? </p>
+            <p class="information-sheet-p">You can email - john.sloan.1@ucdconnect.ie or phone - 00447470180188. </p>
+        </div>
+        <div class="consent-form">
+            <div class="why-not">
+                <div class="x-box"></div>
+                <p class='why-not-q'>Could you tell us why you do not agree to do this experiment?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <textarea type="input" id="why-not-text" name="typed_reason" rows='3' cols='50'></textarea>
+                    <input class="btn btn-primary" id="whyNotTxtBtn" type='submit' name="reason for leaving" value="send">
+                </form>
+            </div>
+            <p class="information-sheet-title">Consent Form</p>
+            <div class="warning-div">
+                <h5 class="warning">Please select all boxes. <span class="option-refuse">(If you are unable to select all boxes, please click the 'I do not agree' button and provide an explanation.)</span></h5>
+            </div>
+            <form class="checkboxes-form">
+                <input type="checkbox" class="consent_check" name="q1" value="yes">I am over 18 years old.<br>
+                <input type="checkbox" class="consent_check" name="q2" value="yes">I have read the information sheet and understand the purpose and content of this study.<br>
+                <input type="checkbox" class="consent_check" name="q2" value="yes">I understand that I will answer English questions.<br>
+                <input type="checkbox" class="consent_check" name="q3" value="yes">I understand that I will write English sentences.<br>
+                <input type="checkbox" class="consent_check" name="q4" value="yes">I understand that I may see positive and negative expressions.<br>
+                <input type="checkbox" class="consent_check" name="q5" value="yes">I understand that I can stop this experiment at any time.<br>
+                <input type="checkbox" class="consent_check" name="q6" value="yes">I understand that my answers and sentences can be used in the publication of higher education....</br>
+                <input type="checkbox" class="consent_check" name="q2" value="yes">I consent to taking part in this study.<br>
+            </form>
+            <div class="agree-buttons">
+                <button type="button" class="btn btn-danger" name="start" value="No Consent" id="noBtn">I do not agree</button>
+                <button type="button" class="btn btn-success" name="start" value="Let's begin" id="yesBtn">I agree</button>
+            </div>
+        </div>
+    {% else %}
+        <p>you have already completed this section</p>
+        <a href="{% url 'main_app:welcome' %}"><button class="btn btn-success" style="float:right;">Homepage</button></a>
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

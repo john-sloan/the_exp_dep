@@ -1,0 +1,103 @@
+#backgroundDiv {
+    padding-bottom: 0px;
+}
+
+.welcome-text {
+    padding: 20px;
+}
+
+.mery-welcome-images {
+    width: 780px;
+    background-color: #86ff80;
+    padding: 20px;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mery-welcome-images-inside {
+    width: 710px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mery-still {
+    background-image: url(/static/main_app/mery_imgs/mery_welcome/mery_stills.jpg);
+    background-repeat: no-repeat;
+    background-size: 300px;
+    height: 240px;
+    width: 220px;
+}
+
+#Still1 {
+    background-position: -35px 0px;
+}
+
+#Still2 {
+    background-position: -35px -240px;
+}
+
+#Still3 {
+    background-position: -35px -480px;
+}
+
+.mery-image {
+    margin-left: 10px;
+    border: solid 3px green;
+    display: inline-block;
+}
+
+#TED {
+    font-family: helvetica;
+    color: red;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.welcome-buttons {
+    padding: 20px;
+    width: 590px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    font-size: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-default {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 2px solid red;
+    background-color: #ffdddd;
+}
+
+.btn-default:hover {
+    background-color: #ff6666;
+    color: white;
+    border: 2px solid red;
+}
+
+.btn-success {
+    background-color: white;
+    border: solid 2px green;
+    color: black;
+    background-color: #ddffe2;
+}
+
+.btn-success:hover {
+    background-color: #00cc44;
+}
+
+#experiment {
+    color: green;
+    font-weight: bold;
+}
+
+
+
+
+
